@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="post-title">{{post.title}}</h1>
+        {% for term in post.terms('project') %}
+        <a class="post-meta-block" href="{{term.link}}">{{term.name}}</a>
+        {% endfor %}
+        <span class="post-meta">
+          {{ post.post_date|date}}
+        </span>
+				<div class="article-body">
+		      {% if post.get_field('project_image') %}
+          <p>
+            <img 
+              class="pure-img-responsive"
+              src="{{TimberImage(post.get_field('project_image')).src('large')}}" />
+          </p>
+          {% endif %}
+					{{post.content}}
+				</div>
+			</section>
+		{% if post.comment_status != 'closed' %}
+			<section class="comments">
+				<div class="responses">
+          {% if post.get_comments()|length == 0 %}
+          {% endif %}
+					{% for cmt in post.get_comments() %}
+						{% include "comment.twig" with {comment:cmt} %}
+					{% endfor %}
+				</div>
+				<div class="respond">
+					{{ fn('comment_form', form_config) }}
+				</div>
+			</section>
+		{% endif %}
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -1,0 +1,9 @@
+<ul class="nav-list">
+  {% for item in projects %}
+  {% if item.term_id != 1 %}
+  <li class="block-link{% if fn('get_queried_object').term_id == item.term_id %} block-link--active{% endif %}">
+    <a class="pure-button" href="{{item.link}}">{{item.name}}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+
+<article class="post post--{{post.post_type}}" id="tease-{{post.ID}}">
+  {% block content %}
+  <header class="post-header">
+    <h2 class="post-title">{{post.title}}</h2>
+    <p class="post-meta">
+      {{post|print_r}}
+      {% for term in post.terms('catgories') %}
+      <li><a href="{{term.link}}">{{term.name}}</a></li>
+      {% endfor %}
+      <a class="post-category" href="#">JavaScript</a>
+    </p>
+  </header>
+  {% endblock %}
+</article>

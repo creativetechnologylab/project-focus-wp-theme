@@ -1,0 +1,5 @@
+
+<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+	<h5 class="comment-author"><span class="post-meta-block">{{comment.author.name}}</span> <span class="post-meta">{{comment.comment_date|date}} {{comment.comment_date|date('g:ia')}}</span></h5>
+	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+</div>

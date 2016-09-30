@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% if sticky|length >= 1 %}
+
+  <h1 class="content-subhead">Pinned Posts</h1>
+  {% for post in sticky %}
+    {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+  {% endfor %}
+
+{% endif %}
+
+<h1 class="content-subhead">
+  {% if fn('is_tax') %} {{ fn('single_cat_title', 'Project: ', false) }} {% else %} Recent Posts{% endif %}
+  <span class="content-subhead-page">
+    {% if fn('get_query_var', 'paged') > 1 %}Page {{fn('get_query_var', 'paged')}}{% endif %}
+  </span>
+</h1>
+  {% if fn('is_tax') %}
+  <p>{{ fn('term_description') }}</p>
+  {% endif %}
+  
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+
+  <div class="pagination">
+    {% if pagination.prev %}
+    <div class="block-link block-link--sml">
+      <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}"><span class="block-link-symbol">⇠</span> Prev</a>
+    </div>
+    {% endif %}
+
+    {% if pagination.next %}
+    <div class="block-link block-link--sml">
+      <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next <span class="block-link-symbol">⇢</span></a>
+    </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

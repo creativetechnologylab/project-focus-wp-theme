@@ -1,0 +1,14 @@
+<div class="pure-menu pure-menu-horizontal">
+	<ul>
+    <li class="pure-menu-item {{item.classes | join(' ')}}">
+      <a class="pure-menu-link" href="http://int-des.com">Interaction Design Communication</a>
+    </li>
+    {% if menu %}
+    {% for item in menu.get_items %}
+    <li class="pure-menu-item {{item.classes | join(' ')}}">
+      <a class="pure-menu-link" href="{{item.get_link}}">{{item.title}}</a>
+    </li>
+    {% endfor %}
+    {% endif %}
+	</ul>
+</div>

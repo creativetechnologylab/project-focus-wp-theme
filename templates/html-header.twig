@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="{{site.charset}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{site.description}}">
+    <title>   
+      {% if wp_title %}
+      {{ wp_title }} - {{ site.name }}
+      {% else %}
+      {{ site.name }}
+      {% endif %}
+    </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="{{site.theme.link}}/static/styles/blog-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="{{site.theme.link}}/static/styles/blog.css">
+    <!--<![endif]-->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="{{site.pingback_url}}" />
+    {{function('wp_head')}}
+

@@ -1,0 +1,9 @@
+{% if menu %}
+  <ul class="nav-list">
+	{% for item in menu.get_items %}
+    <li class="block-link{% if item.current %} block-link--active{% endif %} {{item.classes | join(' ')}}">
+      <a class="pure-button" href="{{item.link}}">{{item.title}}</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
