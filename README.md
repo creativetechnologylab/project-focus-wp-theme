@@ -1,6 +1,6 @@
-# Project Focus - Wordpres Theme.
+# Project Focus - Wordpress Theme.
 
-This is a theme created for the MA Interaction Design Communication course at LCC that focusses around simple presenation of project documentation/discussion. It has a custom 'Project' taxononmy and uses this to enforce a simple layout and some custom required fields for each post. 
+This is a theme created for the MA Interaction Design Communication course at LCC that focusses around simple presentation of project documentation and commentary. It has a custom 'Project' taxonomy and uses this to enforce a simple layout and some custom required fields for each post. 
 
 ## Installing the Theme
 
