@@ -10,5 +10,10 @@
     </li>
     {% endfor %}
     {% endif %}
+    <li class="pure-menu-item {{item.classes | join(' ')}}">
+      <span class="pure-menu-link">
+        Version {{site.version}}
+      </span>
+    </li>
 	</ul>
 </div>

@@ -226,12 +226,13 @@ p a:hover {
 	text-align: center;
 	padding: 1em 0;
 }
-.footer a {
+.footer .pure-menu-link {
 	color: #ccc;
 	font-size: 80%;
 }
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
+
+.footer .pure-menu-link:hover,
+.footer .pure-menu-link:focus {
 	background: none;
 }
 

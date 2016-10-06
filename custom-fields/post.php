@@ -46,10 +46,10 @@ register_field_group(array (
     ),
     array (
       'key' => 'field_57ed2e16a05cb',
-      'label' => 'Project Image',
+      'label' => 'Post Image',
       'name' => 'project_image',
       'type' => 'image',
-      'instructions' => 'This image will be the main representation of your project so make it decent quality & resolution. It will appear in multiple different crops in different places: small for home or section pages & large for full article page). You can edit the image crops through Wordpress using the \'Edit Crop Formats\' link. ',
+      'instructions' => 'This image will be the main representation for this post so make it decent quality & resolution. It will appear in a few different crops in different places: small for home or section pages & large for full article page). You can edit the image crops through Wordpress using the \'Edit Crop Formats\' link. ',
       'required' => 1,
       'conditional_logic' => 0,
       'wrapper' => array (
