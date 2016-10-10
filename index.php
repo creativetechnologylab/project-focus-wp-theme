@@ -40,10 +40,12 @@ $context = Timber::get_context();
 
 $context['pagination'] = Timber::get_pagination();
 $context['posts'] = Timber::get_posts();
-$context['sticky'] = Timber::get_posts(array(
-  'post__in'  => $sticky,
-  'ignore_sticky_posts' => 1
-));
+if(count($sticky) > 0){
+  $context['sticky'] = Timber::get_posts(array(
+    'post__in'  => $sticky,
+    'ignore_sticky_posts' => 1
+  ));
+}
 
 $templates = array( 'index.twig' );
 

@@ -30,7 +30,7 @@ Timber::$dirname = array('templates', 'views');
 
 class StarterSite extends TimberSite {
 
-  public $version = "0.0.2";
+  public $version = "0.0.3";
 
   public $image_sizes = array(
     'thumbnail' => array(256, 256, true),

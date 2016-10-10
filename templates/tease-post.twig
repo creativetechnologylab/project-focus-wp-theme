@@ -4,9 +4,11 @@
 <header class="post-header">
   <h2 class="post-title"><a href="{{post.link}}">{{post.title}}</a></h2>
   <p class="post-meta">
-    {% for term in post.terms('project') %}
-    <a class="post-meta-block" href="{{term.link}}">{{term.name}}</a>
-    {% endfor %}
+    {% if fn('is_tax') == false %}
+      {% for term in post.terms('project') %}
+      <a class="post-meta-block" href="{{term.link}}">{{term.name}}</a>
+      {% endfor %}
+    {% endif %}
 		<span class="post-meta">
 			{{ post.post_date|date}}
 		</span>
